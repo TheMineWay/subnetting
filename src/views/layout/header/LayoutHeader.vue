@@ -30,7 +30,7 @@ export default class LayoutHeader extends Vue {
             </template>
         </ui-top-app-bar>
 
-        <div id="content-main">
+        <div id="content-main" class="container">
             <router-view />
         </div>
     </div>
