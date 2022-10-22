@@ -3,4 +3,10 @@ import App from "./App.vue";
 import "./registerServiceWorker";
 import router from "./router";
 
-createApp(App).use(router).mount("#app");
+import BalmUI from 'balm-ui'; // Official Google Material Components
+import 'balm-ui-css';
+
+createApp(App)
+    .use(BalmUI)
+    .use(router)
+    .mount("#app");
