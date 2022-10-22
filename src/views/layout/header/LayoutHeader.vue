@@ -5,12 +5,12 @@ import './LayoutHeader.scss';
 
 @Options({})
 export default class LayoutHeader extends Vue {
+    type = 0;
+    title = 'Subnetting';
+    shareApi = new ShareApi();
+
     data() {
-        return {
-            type: 0,
-            title: 'Subnetting',
-            shareApi: new ShareApi(),
-        };
+        return {};
     }
 }
 </script>
