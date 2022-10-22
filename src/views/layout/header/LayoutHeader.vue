@@ -24,7 +24,8 @@ export default class LayoutHeader extends Vue {
     <div class="page-top-app-bar">
         <ui-top-app-bar content-selector="#content-main" :type="type" :title="title">
             <template #toolbar="{ toolbarItemClass }">
-                <ui-icon-button v-if="shareApi.isAvailable()" :class="toolbarItemClass" icon="share"></ui-icon-button>
+                <ui-icon-button v-if="shareApi.isAvailable()" :class="toolbarItemClass" icon="share"
+                    @click="shareApi.share($t)"></ui-icon-button>
                 <ui-icon-button :class="toolbarItemClass" icon="code" @click="openGitHubUrl()"></ui-icon-button>
             </template>
         </ui-top-app-bar>
