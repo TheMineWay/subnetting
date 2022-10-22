@@ -1,5 +1,19 @@
+<script lang="ts">
+import { Options, Vue } from "vue-class-component";
+import Layout from "./views/layout/Layout.vue";
+import './App.css';
+
+@Options({
+  components: {
+    Layout,
+  }
+})
+export default class App extends Vue { }
+
+</script>
+
 <template>
-  <router-view />
+  <Layout />
 </template>
 
 <style>

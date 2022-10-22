@@ -1,6 +1,5 @@
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import './HomeView.scss';
 
 @Options({
   components: {},
