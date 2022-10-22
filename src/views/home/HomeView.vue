@@ -1,7 +1,3 @@
-<template>
-  <p>Hello world!</p>
-</template>
-
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
 
@@ -10,3 +6,7 @@ import { Options, Vue } from "vue-class-component";
 })
 export default class HomeView extends Vue { }
 </script>
+
+<template>
+  <p>Hello world!</p>
+</template>
