@@ -5,11 +5,7 @@ class Props {
     placeholder = prop<string>({ required: true });
 }
 
-@Options({
-    props: {
-        placeholder: String
-    }
-})
+@Options({})
 export default class AddressPartInput extends Vue.with(Props) { }
 </script>
 
