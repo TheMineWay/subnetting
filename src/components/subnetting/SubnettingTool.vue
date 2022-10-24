@@ -1,12 +1,17 @@
 <script lang="ts">
 import { Vue, Options } from 'vue-class-component';
+import AddressInput from './address-input/AddressInput.vue';
 
-@Options({})
+@Options({
+    components: {
+        AddressInput,
+    }
+})
 export default class SubnettingTool extends Vue {
 
 }
 </script>
 
 <template>
-    <h1>Subnetting tool</h1>
+    <AddressInput />
 </template>
