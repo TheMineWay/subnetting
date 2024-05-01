@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "evergreen-ui": "^7.1.9",
     "i18next": "^23.11.3",
     "i18next-resources-to-backend": "^1.2.1",
     "next": "14.2.3",
