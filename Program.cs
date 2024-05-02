@@ -6,7 +6,7 @@ var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
-var i18n = await I18n.Create();
+var i18n = await I18n.Create(builder.HostEnvironment.BaseAddress);
 
 builder.Services.AddSingleton(i18n);
 

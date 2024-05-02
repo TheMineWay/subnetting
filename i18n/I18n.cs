@@ -1,14 +1,13 @@
-
 class I18n
 {
     // Instantiator
-    public static async Task<I18n> Create()
+    public static async Task<I18n> Create(string baseUrl)
     {
         // Read local storage
         Language language = Language.es_ES;
 
         // Fetch JSONs
-        var jsonResponse = await new HttpClient().GetAsync($"/i18n/locales/{GetLanguageCode(language)}.json");
+        var jsonResponse = await new HttpClient().GetAsync($"{baseUrl}/i18n/locales/{GetLanguageCode(language)}.json");
 
         return new I18n();
     }
