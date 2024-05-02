@@ -1,0 +1,6 @@
+<RadzenDropDown @bind-Value=@language Data="@LanguageInfo.GetLanguages()" TextProperty="name"
+    ValueProperty="language" />
+
+@code {
+    Language language = Language.es_ES;
+}

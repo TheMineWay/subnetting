@@ -70,6 +70,20 @@ public class I18nTranslationFile
     }
 }
 
+class LanguageInfo
+{
+    public static LanguageInfo[] GetLanguages() => [new LanguageInfo(name: "Español", language: Language.es_ES)];
+
+    public readonly Language language;
+    public readonly string name;
+
+    public LanguageInfo(Language language, string name)
+    {
+        this.language = language;
+        this.name = name;
+    }
+}
+
 enum Language
 {
     es_ES
