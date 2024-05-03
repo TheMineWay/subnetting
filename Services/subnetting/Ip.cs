@@ -5,9 +5,16 @@ namespace subnetting
         // Static
         public static Ip CreateFromInt<T>(int[] ip)
         {
-            byte[] processedIp = (from num in ip select (num.CompareTo(default) < 0 ? (byte)0 : num.CompareTo(default) > 255 ? (byte)255 : (byte)num)).ToArray();
+            List<byte> processedIp = (from num in ip select (num.CompareTo(default) < 0 ? (byte)0 : num.CompareTo(default) > 255 ? (byte)255 : (byte)num)).ToList();
 
-            return new Ip(processedIp);
+            while (processedIp.Count() != 4)
+            {
+                var count = processedIp.Count();
+                if (count > 4) processedIp.RemoveAt(0);
+                else if (count < 4) processedIp.Add(0);
+            }
+
+            return new Ip([.. processedIp]);
         }
         public readonly byte[] ip = ip;
 
