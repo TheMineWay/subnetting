@@ -1,0 +1,45 @@
+<div style="display: flex; flex-direction: column">
+    <label>@label</label>
+    <div>
+        @for (byte i = 0; i < rawBns.Length; i++)
+        {
+            var value = rawBns[i];
+            var index = i;
+
+            <RadzenFormField>
+                <RadzenTextBox MaxLength="3" style="width: 4em; text-align: center" Value="@value" Change=@(value =>
+                OnChangeRawBns(index, value)) />
+            </RadzenFormField>
+        }
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string label { get; set; } = "";
+    [Parameter]
+    public Action<byte[]>? Change { get; set; }
+
+    string[] rawBns = new string[4];
+
+    void OnChangeRawBns(byte index, string value)
+    {
+        try
+        {
+            rawBns[index] = Byte.Parse(value).ToString();
+        }
+        catch (Exception)
+        {
+            rawBns[index] = "";
+        }
+
+        try
+        {
+            Change?.Invoke((from bns in rawBns select Byte.Parse(bns)).ToArray());
+        }
+        catch (Exception)
+        {
+
+        }
+    }
+}

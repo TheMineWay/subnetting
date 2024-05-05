@@ -12,6 +12,9 @@
         "form": {
             "ip-input": {
                 "Label": "Dirección IP"
+            },
+            "mask-input": {
+                "Label": "Máscara de subred"
             }
         }
     }
