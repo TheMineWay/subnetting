@@ -1,6 +1,11 @@
+@inject I18n i18n
+
 <div class="tool">
     <div class="input-row">
         <Subnetting.Components.form.ip.IpInput />
         <Subnetting.Components.form.ip.MaskInput />
+    </div>
+    <div>
+        <RadzenButton Text=@(i18n.T("components.subnet-tool.actions.subnet.Text") + "!") />
     </div>
 </div>

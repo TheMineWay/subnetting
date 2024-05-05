@@ -16,6 +16,13 @@
             "mask-input": {
                 "Label": "Máscara de subred"
             }
+        },
+        "subnet-tool": {
+            "actions": {
+                "subnet": {
+                    "Text": "Subnet"
+                }
+            }
         }
     }
 }
