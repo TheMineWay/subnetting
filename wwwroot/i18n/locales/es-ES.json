@@ -20,7 +20,7 @@
         "subnet-tool": {
             "actions": {
                 "subnet": {
-                    "Text": "Subnet"
+                    "Text": "Subnet!"
                 }
             }
         }
