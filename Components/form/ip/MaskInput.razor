@@ -1,4 +1,11 @@
+@using global::subnetting
 @inject I18n i18n;
 
 <Subnetting.Components.form.bytes_network_structure.BytesNetworkStructureInput
-    label=@i18n.T("components.form.mask-input.Label") />
+    label=@i18n.T("components.form.mask-input.Label") Change=@(value => mask = new Mask(new
+    BytesNetworkStructure(value))) />
+
+@code {
+    [Parameter]
+    public Mask? mask { get; set; } = null;
+}

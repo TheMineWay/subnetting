@@ -1,11 +1,16 @@
 @inject I18n i18n
+@using global::subnetting
 
 <div class="tool">
     <div class="input-row">
-        <Subnetting.Components.form.ip.IpInput />
-        <Subnetting.Components.form.ip.MaskInput />
+        <Subnetting.Components.form.ip.IpInput ip=@subnetResolver.ip />
+        <Subnetting.Components.form.ip.MaskInput mask=@subnetResolver.mask />
     </div>
     <div>
         <RadzenButton Text=@i18n.T("components.subnet-tool.actions.subnet.Text") />
     </div>
 </div>
+
+@code {
+    SubnetResolver subnetResolver = new SubnetResolver();
+}

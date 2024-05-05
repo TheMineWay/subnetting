@@ -1,8 +1,8 @@
 namespace subnetting
 {
-    class SubnetResolver(Ip ip, Mask mask)
+    public class SubnetResolver()
     {
-        public readonly Ip ip = ip;
-        public readonly Mask mask = mask;
+        public Ip? ip = null;
+        public Mask? mask = null;
     }
 }

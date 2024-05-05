@@ -1,4 +1,10 @@
+@using global::subnetting
 @inject I18n i18n;
 
 <Subnetting.Components.form.bytes_network_structure.BytesNetworkStructureInput
-    label=@i18n.T("components.form.ip-input.Label") />
+    label=@i18n.T("components.form.ip-input.Label") Change=@(value => ip = new Ip(new BytesNetworkStructure(value))) />
+
+@code {
+    [Parameter]
+    public Ip? ip { get; set; } = null;
+}
