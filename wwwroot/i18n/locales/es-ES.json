@@ -7,5 +7,12 @@
                 }
             }
         }
+    },
+    "components": {
+        "form": {
+            "ip-input": {
+                "Label": "Dirección IP"
+            }
+        }
     }
 }

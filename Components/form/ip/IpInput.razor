@@ -1,0 +1,30 @@
+@inject I18n i18n;
+
+<div>
+    <label>@i18n.T("components.form.ip-input.Label")</label>
+    @for (byte i = 0; i < rawIp.Length; i++)
+    {
+        var value = rawIp[i];
+        var index = i;
+
+        <RadzenFormField>
+            <RadzenTextBox Value="@value" Change=@(value => OnChangeRawIp(index, value)) />
+        </RadzenFormField>
+    }
+</div>
+
+@code {
+    string[] rawIp = new string[4];
+
+    void OnChangeRawIp(byte index, string value)
+    {
+        try
+        {
+            rawIp[index] = Byte.Parse(value).ToString();
+        }
+        catch (Exception)
+        {
+            rawIp[index] = "0";
+        }
+    }
+}
