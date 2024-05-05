@@ -1,5 +1,10 @@
+div.tool {
+    display: flex;
+    justify-content: center;
+}
+
 div.input-row {
     display: flex;
     flex-direction: row;
-    gap: 1em;
+    gap: 2em;
 }
