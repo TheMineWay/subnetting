@@ -3,8 +3,9 @@
 
 <div class="tool">
     <div class="input-row">
-        <Subnetting.Components.form.ip.IpInput Bns=@subnetResolver.ip?.bns />
-        <Subnetting.Components.form.ip.MaskInput Bns=@subnetResolver.mask?.bns />
+        <Subnetting.Components.form.ip.IpInput Bns=@subnetResolver.ip?.bns IsValid=@subnetResolver.ip?.bns.IsValid />
+        <Subnetting.Components.form.ip.MaskInput Bns=@subnetResolver.mask?.bns
+            IsValid=@subnetResolver.mask?.bns.IsValid />
     </div>
     <div>
         <RadzenButton Text=@i18n.T("components.subnet-tool.actions.subnet.Text") />

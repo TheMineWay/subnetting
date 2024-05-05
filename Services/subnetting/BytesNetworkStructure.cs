@@ -18,5 +18,5 @@ public class BytesNetworkStructure(List<byte?> bns)
 
     public override string ToString() => String.Join(".", bns);
 
-    public bool IsValid() => bns.All(v => v != null);
+    public bool IsValid = bns.All(v => v != null);
 }
