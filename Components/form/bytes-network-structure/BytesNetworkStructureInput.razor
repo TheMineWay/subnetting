@@ -1,14 +1,21 @@
+@using global::subnetting
 <div style="display: flex; flex-direction: column">
-    <label>@label</label>
-    <div>
-        @for (byte i = 0; i < rawBns.Length; i++)
+    <div class="label">
+        <label>@label</label>
+        @if (IsValid == true)
         {
-            var value = rawBns[i];
+            <RadzenIcon Icon="done" IconColor="green" />
+        }
+    </div>
+    <div>
+        @for (byte i = 0; i < Value.bns.Count(); i++)
+        {
+            var val = Value.bns[i];
             var index = i;
 
             <RadzenFormField>
-                <RadzenTextBox MaxLength="3" style="width: 4em; text-align: center" Value="@value" Change=@(value =>
-                OnChangeRawBns(index, value)) />
+                <RadzenTextBox MaxLength="3" style="width: 4em; text-align: center" Value="@val.ToString()" Change=@(v =>
+                OnChangeRawBns(index, v?.ToString())) />
             </RadzenFormField>
         }
     </div>
@@ -18,28 +25,30 @@
     [Parameter]
     public string label { get; set; } = "";
     [Parameter]
-    public Action<byte[]>? Change { get; set; }
+    public Action<BytesNetworkStructure>? ValueChanged { get; set; }
 
-    string[] rawBns = new string[4];
+    [Parameter]
+    public bool? IsValid { get; set; } = null;
 
-    void OnChangeRawBns(byte index, string value)
+    [Parameter]
+    public BytesNetworkStructure Value { get; set; } = new(new() { null, null, null, null });
+
+    void OnChangeRawBns(byte index, string? newValue)
     {
         try
         {
-            rawBns[index] = Byte.Parse(value).ToString();
+            if (newValue != null) Value.bns[index] = byte.Parse(newValue);
+            else Value.bns[index] = null;
         }
         catch (Exception)
         {
-            rawBns[index] = "";
+            Value.bns[index] = null;
         }
 
         try
         {
-            Change?.Invoke((from bns in rawBns select Byte.Parse(bns)).ToArray());
+            ValueChanged?.Invoke(Value);
         }
-        catch (Exception)
-        {
-
-        }
+        catch (Exception) { }
     }
 }

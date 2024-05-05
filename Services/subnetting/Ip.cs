@@ -1,7 +1,8 @@
 namespace subnetting
 {
-    public class Ip(BytesNetworkStructure ip)
+    public class Ip(BytesNetworkStructure bns)
     {
-        public readonly BytesNetworkStructure ip = ip;
+        public static Ip CreateEmpty() => new(new([null, null, null, null]));
+        public readonly BytesNetworkStructure bns = bns;
     }
 }

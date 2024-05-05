@@ -3,8 +3,8 @@
 
 <div class="tool">
     <div class="input-row">
-        <Subnetting.Components.form.ip.IpInput ip=@subnetResolver.ip />
-        <Subnetting.Components.form.ip.MaskInput mask=@subnetResolver.mask />
+        <Subnetting.Components.form.ip.IpInput Bns=@subnetResolver.ip?.bns />
+        <Subnetting.Components.form.ip.MaskInput Bns=@subnetResolver.mask?.bns />
     </div>
     <div>
         <RadzenButton Text=@i18n.T("components.subnet-tool.actions.subnet.Text") />

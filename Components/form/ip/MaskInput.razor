@@ -1,11 +1,12 @@
-@using global::subnetting
 @inject I18n i18n;
 
 <Subnetting.Components.form.bytes_network_structure.BytesNetworkStructureInput
-    label=@i18n.T("components.form.mask-input.Label") Change=@(value => mask = new Mask(new
-    BytesNetworkStructure(value))) />
+    label=@i18n.T("components.form.mask-input.Label") @bind-Value=@Bns IsValid=@(Bns?.IsValid()) />
 
 @code {
+
     [Parameter]
-    public Mask? mask { get; set; } = null;
+    public BytesNetworkStructure? Bns { get; set; }
+    [Parameter]
+    public Action<BytesNetworkStructure>? OnChange { get; set; }
 }
